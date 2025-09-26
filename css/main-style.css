@@ -42,19 +42,19 @@ html {
 .container {
     display: flex;
     flex-direction: column;
-    margin: auto 120px;
+    margin: 120px;
     align-items: center;
 }
 
 @media (max-width: 1440px) {
     .container {
-        margin: auto 100px;
+        margin: 100px;
     }
 }
 
 @media (max-width: 375px) {
     .container {
-        margin: auto 20px;
+        margin: 20px;
     }
 }
 
