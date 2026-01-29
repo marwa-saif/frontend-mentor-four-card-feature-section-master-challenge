@@ -73,6 +73,7 @@ h2 {
     font-size: 1.25rem;
     color: var(--grey-500);
     font-weight: var(--semibold);
+    margin-bottom: 0.2em;
 }
 
 .card {
@@ -135,7 +136,7 @@ h2 {
 @media (min-width: 62rem) {
    
     .head {
-        margin-top: 4.5em;
+        margin-top: 5em;
     }
     .cards {
         grid-template-columns: repeat(3, 350px);
