@@ -1,95 +1,90 @@
-:root {
-
-    /* Primary Colors */
-    --red-color: hsl(0, 78%, 62%);
-    --cyan-color: hsl(180, 62%, 55%);
-    --orange-color: hsl(34, 97%, 64%);
-    --blue-color: hsl(212, 86%, 64%);
-
-    /* Neutral Colors */
-    --grey-color-500: hsl(234, 12%, 34%);
-    --grey-color-400: hsl(212, 6%, 44%);
-    --white-color: hsl(0, 0%, 100%);
-
-}
-
-* {
-    box-sizing: border-box;
+*, *::before, *::after {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
-html {
-    font-family: "Poppins", sans-serif;
-    background-color: var(--white-color);
-    color: var(--grey-color-400);
-    font-size: 15px;
-    font-weight: 400;
+:root {
+    /* Colors */
+    /* ### Primary */
+    --red: hsl(0, 78%, 62%);
+    --cyan: hsl(180, 62%, 55%);
+    --orange: hsl(34, 97%, 64%);
+    --blue: hsl(212, 86%, 64%);
+    /* ### Neutral */
+    --grey-500: hsl(234, 12%, 34%);
+    --grey-400: hsl(212, 6%, 44%);
+    --white: hsl(0, 0%, 100%);
+    --background: hsl(0, 0%, 98%);
+
+    /* Font */
+    --main-font: Poppins;
+    --extraLight: 200;
+    --regular: 400;
+    --semibold : 600;
+
 }
 
-.center-wrapper {
-    display: grid;
-    place-items: center;
-    height: 100vh;
+body {
+    font-family: var(--main-font), sans-serif;
+    font-size: 0.9375rem;
+    font-weight: var(--regular);
+    background-color: var(--background);
+    color: var(--grey-400);
 }
 
-@media (max-width: 375px) {
-    .center-wrapper {
-        margin: 50px auto;
-    }
+a {
+    text-decoration: none;
+    font-style: italic;
+    color: var(--grey-500);
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    margin: 120px;
-    align-items: center;
+img {
+    width: 4.5rem;
+    max-width: 100%;
 }
 
-@media (max-width: 1440px) {
-    .container {
-        margin: 100px;
-    }
+main {
+    padding: 2em 1.4em;
 }
 
-@media (max-width: 375px) {
-    .container {
-        margin: 20px;
-    }
-}
-
-.container .heading {
-    max-width: 500px;
+.head {
     text-align: center;
+    max-width: 34rem;
+    color: var(--grey-500);
+    font-size: 1rem;
+    margin-bottom: 4em;
+    line-height: 1.4;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.container .heading .page-title {
-    font-weight: 600;
-    margin-bottom: 20px;
+h1 {
+    font-size: clamp(1.6rem, 5vw, 2.4rem);
+    margin-bottom: 0.6em;
 }
 
-.container .heading .page-title-span {
-    font-weight: 200;
-    display: block;
+h1 span {
+    font-weight: var(--extraLight);
+    color: var(--grey-400);
 }
 
-.container .cards {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 30px;
-    margin: 50px auto;
-    align-items: center;
+h2 {
+    font-size: clamp(1.4rem, 5vw, 1.6rem);
+    color: var(--grey-500);
+    font-weight: var(--semibold);
 }
 
-.container .cards .card {
+.card {
+    background-color: var(--white);
     position: relative;
-    padding: 30px;
+    overflow: hidden;
+    padding: 2em;
+    margin-bottom: 2.2em;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08),                0px 8px 24px rgba(0, 0, 0, 0.06);
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    box-shadow: 0 4px 16px -6px var(--grey-color-400);
-    overflow: hidden;
+    align-items: start;
     border-radius: 8px;
     -webkit-border-radius: 8px;
     -moz-border-radius: 8px;
@@ -97,113 +92,73 @@ html {
     -o-border-radius: 8px;
 }
 
-.container .cards .card .card-title {
-    font-weight: 600;
-    font-size: 18px;
-}
-
-.container .cards .card .card-details {
-    font-weight: 200;
-}
-
-.container .cards .card .card-image {
-    width: 70px;
-    margin: 20px 0;
-    align-self: flex-end;
-}
-
-.container .cards .card::before {
+.card::before {
     content: "";
     position: absolute;
     width: 100%;
     height: 4px;
-    top: 0;
+    background-color: var(--card-color);
     left: 0;
+    top: 0;
 }
 
-.container .cards .cyan,
-.container .cards .red,
-.container .cards .orange,
-.container .cards .blue {
-    grid-column: auto;
-    grid-row: auto;
-    align-self: center;
+.red {
+    --card-color: var(--red);
 }
 
-@media (min-width: 787px) {
-    .container .cards {
-        grid-template-columns: repeat(3, minmax(200px, 1fr));
+.cyan {
+    --card-color: var(--cyan);
+}
+
+.orange {
+    --card-color: var(--orange);
+}
+
+.blue {
+    --card-color: var(--blue);
+}
+
+.image{
+    margin-top: 2em;
+    margin-bottom: 0.5em;
+    align-self: flex-end;
+}
+
+@media (min-width: 49rem) {
+    .cards {
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 2em;
+    }
+}
+
+@media (min-width: 62rem) {
+   
+    .head {
+        margin-top: 15em;
+    }
+    .cards {
+        grid-template-columns: repeat(3, minmax(350px, 400px));
+        justify-content: center;
     }
 
-    .container .cards .cyan {
+    .cyan {
         grid-row: 1/ span 2;
         align-self: center;
     }
 
-    .container .cards .red {
+    .red,
+    .orange {
         grid-column: 2;
     }
 
-    .container .cards .orange {
-        grid-column: 2;
-    }
-
-    .container .cards .blue {
+    .blue {
         grid-column: 3;
         grid-row: 1/ span 2;
         align-self: center;
     }
 }
 
-@media (min-width: 1440px) {
-    .container .cards {
-        grid-template-columns: repeat(3, minmax(350px, 1fr));
-    }
-
-    .container .cards .cyan {
-        grid-row: 1/ span 2;
-        align-self: center;
-    }
-
-    .container .cards .red {
-        grid-column: 2;
-    }
-
-    .container .cards .orange {
-        grid-column: 2;
-    }
-
-    .container .cards .blue {
-        grid-column: 3;
-        grid-row: 1/ span 2;
-        align-self: center;
-    }
-}
-
-.container .cards .cyan::before {
-    background-color: var(--cyan-color)
-}
-
-.container .cards .red::before {
-    background-color: var(--red-color);
-}
-
-.container .cards .orange::before {
-    background-color: var(--orange-color)
-}
-
-.container .cards .blue::before {
-    background-color: var(--blue-color)
-}
-
-.attribution {
+footer {
     text-align: center;
-    margin: 30 auto;
-}
-
-.attribution a {
-    color: var(--blue-color);
-    font-style: italic;
-    font-weight: 600;
-    text-decoration: none;
 }
