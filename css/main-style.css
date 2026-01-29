@@ -135,7 +135,7 @@ h2 {
 @media (min-width: 62rem) {
    
     .head {
-        margin-top: 8em;
+        margin-top: 5em;
     }
     .cards {
         grid-template-columns: repeat(3, minmax(350px, 400px));
@@ -163,3 +163,4 @@ footer {
     text-align: center;
 
 }
+
