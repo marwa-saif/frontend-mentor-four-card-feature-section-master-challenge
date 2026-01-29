@@ -27,7 +27,7 @@
 
 body {
     font-family: var(--main-font), sans-serif;
-    font-size: 0.85rem;
+    font-size: 0.81rem;
     font-weight: var(--regular);
     background-color: var(--background);
     color: var(--grey-400);
@@ -70,7 +70,7 @@ h1 span {
 }
 
 h2 {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     color: var(--grey-500);
     font-weight: var(--semibold);
 }
